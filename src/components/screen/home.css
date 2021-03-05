@@ -1,0 +1,14 @@
+.main_cls{
+    max-width:500px;
+  
+    max-height: max-content;
+}
+h5{
+    margin: 20px 0px;
+    padding:5px
+}
+
+.coment{
+    cursor: pointer;
+    margin-left: -10%;
+}

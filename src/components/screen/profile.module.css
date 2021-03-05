@@ -1,0 +1,25 @@
+.styleone{
+    display:flex;
+    justify-content: space-around;
+    margin:20px 0px;
+    border-bottom: 1px solid #ccc;
+}
+.styletwo{
+    display: flex;
+}
+
+.mainstyle{
+    max-width: 550px;
+    margin:0 auto;
+}
+.gallery{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 30px;
+}
+.item{
+   width:30%;
+   border:3px solid white;
+   max-height: 100px;
+}
