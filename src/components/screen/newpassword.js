@@ -7,7 +7,7 @@ const Signin= Props=>{
     const[password,setpassword]=useState("")
     const token = useParams()
     const postData=()=>{
-        fetch("http://localhost:8080/newpassword",{
+        fetch("https://instabackapi.herokuapp.com/newpassword",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

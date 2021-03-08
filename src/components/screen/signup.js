@@ -16,7 +16,7 @@ useEffect(()=>{
         if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
             return M.toast({html: "Invalid Email",classes: 'rounded red'})
          }
-         fetch("http://localhost:8080/signup",{
+         fetch("https://instabackapi.herokuapp.com/signup",{
              method:"POST",
              headers:{
                  "Content-Type":"application/json"
@@ -55,7 +55,7 @@ const upload_fields = ()=>{
     if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
         return M.toast({html: "Invalid Email",classes: 'rounded red'})
      }
-     fetch("http://localhost:8080/signup",{
+     fetch("https://instabackapi.herokuapp.com/signup",{
          method:"POST",
          headers:{
              "Content-Type":"application/json"

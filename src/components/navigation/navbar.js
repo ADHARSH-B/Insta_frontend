@@ -39,7 +39,7 @@ const Navbar = (props)=>{
   
 const postdata = (query)=>{
   setsearchuser(query)
-  fetch("http://localhost:8080/searchuser",{
+  fetch("https://instabackapi.herokuapp.com/searchuser",{
     method:"PUT",
     headers:{
       "Content-Type":"application/json",

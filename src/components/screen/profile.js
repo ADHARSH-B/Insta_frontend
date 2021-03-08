@@ -7,7 +7,7 @@ const Profile = ()=>{
     const user = JSON.parse(localStorage.getItem("user"))
     const {state,dispatch} = useContext(UserContext)
     useEffect(()=>{
-         fetch("http://localhost:8080/mypost",{
+         fetch("https://instabackapi.herokuapp.com/mypost",{
              headers:{
                 "Authorization":"Bearer " + localStorage.getItem("jwt")
              }

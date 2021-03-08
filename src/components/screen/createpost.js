@@ -12,7 +12,7 @@ const Createpost = Props=>{
   
     useEffect(()=>{
         if(url){
-            fetch("http://localhost:8080/createpost",{
+            fetch("https://instabackapi.herokuapp.com/createpost",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json",

@@ -17,7 +17,7 @@ const Home = ()=>{
     }
     const[Post,setPost] = useState([])
     useEffect(()=>{
-         fetch("http://localhost:8080/followingpost",{
+         fetch("https://instabackapi.herokuapp.com/followingpost",{
              headers:{
                  "Authorization":"Bearer " + localStorage.getItem("jwt")
              }
@@ -37,7 +37,7 @@ const Home = ()=>{
 
 
     const likepost = (id)=>{
-        fetch("http://localhost:8080/like",{
+        fetch("https://instabackapi.herokuapp.com/like",{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json",
@@ -63,7 +63,7 @@ const Home = ()=>{
             })
     }
     const unlikepost = (id)=>{
-        fetch("http://localhost:8080/unlike",{
+        fetch("https://instabackapi.herokuapp.com/unlike",{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json",
@@ -87,7 +87,7 @@ const Home = ()=>{
         })
     }
     const commentpost = (id,comments)=>{
-        fetch("http://localhost:8080/makecomment",{
+        fetch("https://instabackapi.herokuapp.com/makecomment",{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json",
@@ -112,7 +112,7 @@ const Home = ()=>{
        })
     }
     const deleteposthandler = (postid)=>{
-        fetch(`http://localhost:8080/deletepost/:${postid}`,{
+        fetch(`https://instabackapi.herokuapp.com/deletepost/:${postid}`,{
             method:"DELETE",
             headers:{
                 "Authorization":"Bearer " + localStorage.getItem("jwt") 

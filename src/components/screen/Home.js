@@ -19,12 +19,12 @@ const Home = ()=>{
     }
     const[Post,setPost] = useState([])
     useEffect(()=>{
-         fetch("http://localhost:8080/allpost",{
+         fetch("https://instabackapi.herokuapp.com/allpost",{
              headers:{
                  "Authorization":"Bearer " + localStorage.getItem("jwt")
              }
          }).then(res=>res.json()).then(result=>setPost(result.allpost))
-         const socket = openSocket("http://localhost:8080")
+         const socket = openSocket("https://instabackapi.herokuapp.com")
         // socket.on("Likes",data=>{
           //   if(data.action == 'like'){
                 // likespost(data.result)
@@ -37,7 +37,7 @@ const Home = ()=>{
 
 
     const likepost = (id)=>{
-        fetch("http://localhost:8080/like",{
+        fetch("https://instabackapi.herokuapp.com/like",{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json",
@@ -63,7 +63,7 @@ const Home = ()=>{
             })
     }
     const unlikepost = (id)=>{
-        fetch("http://localhost:8080/unlike",{
+        fetch("https://instabackapi.herokuapp.com/unlike",{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json",
@@ -87,7 +87,7 @@ const Home = ()=>{
         })
     }
     const commentpost = (id,comments)=>{
-        fetch("http://localhost:8080/makecomment",{
+        fetch("https://instabackapi.herokuapp.com/makecomment",{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json",
@@ -112,7 +112,7 @@ const Home = ()=>{
        })
     }
     const deleteposthandler = (postid)=>{
-        fetch(`http://localhost:8080/deletepost/:${postid}`,{
+        fetch(`https://instabackapi.herokuapp.com/deletepost/:${postid}`,{
             method:"DELETE",
             headers:{
                 "Authorization":"Bearer " + localStorage.getItem("jwt") 

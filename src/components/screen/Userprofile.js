@@ -12,7 +12,7 @@ const Profile = ()=>{
   // console.log(state ? !state.following.includes(userid):null)
    const[showfollow,setshowfollow] = useState(state ? !state.following.includes(userid):true)
     useEffect(()=>{
-         fetch(`http://localhost:8080/profile/${userid}`,{
+         fetch(`https://instabackapi.herokuapp.com/profile/${userid}`,{
              headers:{
                "Authorization":"Bearer " + localStorage.getItem("jwt")
               }
@@ -25,7 +25,7 @@ const Profile = ()=>{
     },[])
     const follow_user = (id)=>{
        
-        fetch("http://localhost:8080/followuser",{
+        fetch("https://instabackapi.herokuapp.com/followuser",{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json",
@@ -47,7 +47,7 @@ const Profile = ()=>{
                     user:{
                         ...prevstate.user,
                         //followers:[...prevstate.user.followers.concat(),result._id],
-                        followers:prevstate.user.followers.concat(result.result.following),
+                        followers:prevstate.user.followers.concat(result.result._id),
                     } 
                  }
              })
@@ -56,7 +56,7 @@ const Profile = ()=>{
         })
     }
     const unfollow_user = (id)=>{
-        fetch("http://localhost:8080/unfollowuser",{
+        fetch("https://instabackapi.herokuapp.com/unfollowuser",{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json",
